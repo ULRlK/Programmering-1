@@ -1,0 +1,23 @@
+@startuml
+
+class RealEstate {
+    +int municipalityNumber
+    +String municipalityName
+    +int lotNumber
+    +int sectionNumber 
+    +String name
+    +double area
+    +String ownerName
+    +String getFormattedId()
+}
+
+class RealEstateRegister {
+    +void addRealEstate(RealEstate estate)
+    +List<RealEstate> getAllRealEstates()
+    +RealEstate searchRealEstate(int municipalityNumber, int lotNumber, int sectionNumber)
+    +double calculateAverageArea()
+}
+
+RealEstateRegister "1" *-- "many" RealEstate
+
+@enduml

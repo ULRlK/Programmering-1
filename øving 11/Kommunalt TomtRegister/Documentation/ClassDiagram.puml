@@ -1,0 +1,36 @@
+@startuml
+class TomtRegister {
+  -ArrayList<Eiendom> eiendommer
+  +TomtRegister()
+  +TomtRegister(ArrayList<Eiendom> eiendommer)
+  +void addEiendom(Eiendom eiendom)
+  +ArrayList<Eiendom> getEiendommer()
+  +Eiendom FindEiendom(int kommuneNr, int gnr, int bnr)
+  +double avgAreal()
+}
+
+class Eiendom {
+  -int kommuneNr
+  -String kommuneNavn
+  -int gnr
+  -int bnr
+  -String bruksnavn
+  -double areal
+  -String eier
+  +Eiendom(int kommuneNr, String kommuneNavn, int gnr, int bnr, String bruksnavn, int areal, String eier)
+  +int getKommuneNr()
+  +String getKommuneNavn()
+  +int getGnr()
+  +int getBnr()
+  +String getBruksnavn()
+  +double getAreal()
+  +String getEier()
+  +String toString()
+}w
+
+class Main {
+  +void main(String[] args)
+}
+
+TomtRegister "1" *-- "0..*" Eiendom
+@enduml

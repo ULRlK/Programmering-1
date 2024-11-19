@@ -1,0 +1,49 @@
++----------------+
+|      Rett      |
++----------------+
+| - name: String |
+| - recipe: String |
+| - type: String |
+| - price: double |
++----------------+
+| + Rett(name: String, recipe: String, type: String, price: double) |
+| + getName(): String |
+| + getRecipe(): String |
+| + getType(): String |
+| + getPrice(): double |
++----------------+
+
++----------------+
+|      Meny      |
++----------------+
+| - name: String |
+| - retter: ArrayList<Rett> |
++----------------+
+| + Meny(rett: Rett, name: String) |
+| + Meny(retter: ArrayList<Rett>, name: String) |
+| + getName(): String |
+| + getRetter(): ArrayList<Rett> |
+| + addRett(rett: Rett): void |
+| + getRettType(type: String): ArrayList<Rett> |
+| + checkRett(name: String): boolean |
+| + getMenuPrice(): double |
++----------------+
+
++--------------------+
+|    MenyRegister    |
++--------------------+
+| - menyer: ArrayList<Meny> |
++--------------------+
+| + MenyRegister(meny: Meny) |
+| + addMeny(meny: Meny): void |
+| + addRettToMeny(menyName: String, rett: Rett): void |
+| + findRett(name: String): ArrayList<String> |
+| + findMenuPrice(price: double): ArrayList<String> |
+| + findRettType(type: String): Set<String> |
+| + getMenyNavn(): ArrayList<String> |
+| + findRettRecipe(name: String): String |
++--------------------+
+
+Relationships:
+1. **Meny** - contains multiple **Rett** instances (`Composition` relationship with 1..* multiplicity).
+2. **MenyRegister** - contains multiple **Meny** instances (`Composition` relationship with 1..* multiplicity).
